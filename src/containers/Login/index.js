@@ -65,7 +65,7 @@ function Login() {
                         </Button>
                 </form>
                 <SignLink>
-                    Não possui conta? <a href='http://localhost:301' >Sign Up</a>
+                    Não possui conta? <a href='http://localhost:3001' >Sign Up</a>
                 </SignLink>
 
             </ContainerItens>

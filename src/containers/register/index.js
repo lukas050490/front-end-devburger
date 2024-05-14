@@ -60,7 +60,7 @@ function Register() {
                 <form noValidate onSubmit={handleSubmit(onSubmit)} >
 
                 <Label>Nome</Label>
-                    <Input type="name" {...register("name")}
+                    <Input type="text"  {...register("name")}
                         error={errors.name?.message} />
                     <ErrorMessage>{errors.name?.message}</ErrorMessage>
 
