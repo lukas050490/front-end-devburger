@@ -12,8 +12,8 @@ export const Container = styled.div`
 
 export const LoginImage = styled.img`
   display: flex;
-  height: 500px;
-  width: 500px;
+  height: 640px;
+  width: 550px;
   border-radius: 15px 0 0 15px;
   
  `

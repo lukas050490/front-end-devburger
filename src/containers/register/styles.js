@@ -12,16 +12,17 @@ export const Container = styled.div`
 
 export const RegisterImage = styled.img`
   display: flex;
-  height: 500px;
-  width: 500px;
+  height: 715px;
+  width: 580px;
   border-radius: 15px 0 0 15px;
-  
+  justify-content:center;
+  align-items: center;
  `
 
 export const ContainerItens = styled.div`
   background: #373737;
   border-radius: 0 15px 15px 0;
-  height: 70%;
+  height: 80%;
   padding: 40px 75px;
   display: flex;
   flex-direction: column;
@@ -51,7 +52,7 @@ export const Label = styled.p`
   font-size: 12px;
   line-height: 14px;
   color: #ffffff;
-  margin-top: 10px;
+  margin-top: ${props => (props.error ? '5px' : '10px')};
   margin-bottom: 5px;
 
 
