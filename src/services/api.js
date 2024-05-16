@@ -1,7 +1,14 @@
-import axios from 'axios';
+import axios from 'axios'
 
  const apiDevBurger = axios.create({
     baseURL: 'http://localhost:3001'
 });
 
-export default apiDevBurger;
+apiDevBurger.interceptors.request.use(async config =>{
+    const userData = await localStorage.getItem('codeburger:userData')
+    const token = userData && JSON.parce(userData).token
+    config.headers.authorization = `Bearer ${token}`
+    return config
+})
+
+export default apiDevBurger
