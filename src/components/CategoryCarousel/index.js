@@ -1,34 +1,46 @@
 import React, { useEffect,useState } from 'react'
 import Category from '../../assets/categories-home.png'
 import api from '../../services/api'
-import { Container, CategoryImg } from './styles'
+import { Container, CategoryImg, ContainerItens, Image, Button } from './styles'
 import Carousel from 'react-elastic-carousel'
+
 
 function CategoryCarousel() {
 const [categories,setCategories] = useState([])
 
     useEffect(() => {
-        async function loadcategories() {
+        async function loadCategories () {
             const {data} = await api.get('categories')
             
             setCategories(data)
         }
        
-        loadcategories()
+        loadCategories()
     }, [])
 
+const breakPoints = [
+    {width:1,itemsToShow:1},
+    {width:400,itemsToShow:2},
+    {width:600,itemsToShow:3},
+    {width:900,itemsToShow:4},
+    {width:1300,itemsToShow:5},
+]
 
     return (
         <Container>
-            <CategoryImg src={Category} alt='logodacategoria' />
+            <CategoryImg
+             src={Category} 
+             alt='logodacategoria'
+             breakPoints={breakPoints} />
 
-            <Carousel itemstoShow={4}>
+            <Carousel itemstoShow={4} style={{width:'90%'}}>
                 {
-                    categories && categories.map(category => {
-                        <div key={category.id}>
-                            <img src={category.url} alt='foto-da-category'/>
-                            <button>{category.name}</button>
-                        </div>
+                  categories && categories.map(category => {
+                        <ContainerItens key={category.id}>
+                            <Image src={category.url} alt='foto-da-category'/>
+                            <Button>{category.name}</Button>
+                        </ContainerItens>
+                        
                     })
                 }
             </Carousel>
