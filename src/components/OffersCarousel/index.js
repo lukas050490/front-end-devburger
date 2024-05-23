@@ -1,7 +1,8 @@
 import React, { useEffect,useState } from 'react'
 import Offers from '../../assets/offers-home.png'
 import api from '../../services/api'
-import { Container, CategoryImg, ContainerItens, Image, Button } from './styles'
+import LinhaRodape from '../../assets/linha-rodapé.png'
+import { Container, CategoryImg, ContainerItens, Image, Button, RodapeImg  } from './styles'
 import Carousel from 'react-elastic-carousel'
 import formatCurrency from '../../Utils/formatCurrency'
 
@@ -23,7 +24,7 @@ const [offers,setOffers] = useState([])
         }
        
         loadOffers()
-    }, [])
+    },[])
 
 const breakPoints = [
     {width:1,itemsToShow:1},
@@ -43,16 +44,18 @@ const breakPoints = [
             <Carousel itemstoShow={5} style={{width:'90%'}}>
                 {offers &&
                  
-                 offers.map(product => {
+                 // eslint-disable-next-line array-callback-return
+                 offers.map(product => 
                         <ContainerItens key={product.id}>
                             <Image src={product.url} alt='foto-da-oferta'/>
                             <p>{product.name}</p>
                             <p>{product.formatedPrice}</p>
                             <Button>Peça agora</Button>
                         </ContainerItens>
-                    })
+                    )
                 }
             </Carousel>
+            <RodapeImg src={LinhaRodape} alt='linha do rodapé'/>
         </Container>
     )
 }

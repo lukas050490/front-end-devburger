@@ -26,8 +26,12 @@ padding: 35px 0;
 }
 
 `
+export const RodapeImg = styled.img``
 
-export const CategoryImg = styled.img``
+export const CategoryImg = styled.img`
+display: flex;
+align-items: center;
+`
 
 export const ContainerItens = styled.div`
 display: flex;
@@ -46,6 +50,7 @@ export const Image = styled.img`
 width: 200px;
 border-radius: 10px;
 margin-bottom: 16px;
+background-color: #9758a6;
 `
 
 export const Button = styled.button`
