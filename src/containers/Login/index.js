@@ -6,7 +6,7 @@ import api from '../../services/api'
 import { toast } from 'react-toastify';
 import { useUser } from '../../hooks/UserContext'
 import {Link,useHistory} from 'react-router-dom'
-import Button from '../../components/Button'
+import {Button} from '../../components'
 import LoginImg from '../../assets/burgerflesh.jpg'
 import Logo from '../../assets/burger-logo.svg'
 import {
@@ -18,7 +18,8 @@ import {
     SignLink,
     ErrorMessage
 } from './styles'
-function Login() {
+
+ export function Login() {
     const history = useHistory()
     const {putUserData} = useUser()
 
@@ -92,4 +93,3 @@ function Login() {
         </Container>
     )
 }
-export default Login

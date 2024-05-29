@@ -5,7 +5,7 @@ import { Container, CategoryImg, ContainerItens, Image, Button} from './styles'
 import Carousel from 'react-elastic-carousel'
 
 
-function CategoryCarousel() {
+ export function CategoryCarousel() {
 const [categories,setCategories] = useState([])
 
     useEffect(() => {
@@ -32,7 +32,7 @@ const breakPoints = [
              alt='logodacategoria'
              breakPoints={breakPoints} />
 
-            <Carousel itemstoShow={4} style={{width:'90%'}}>
+            <Carousel itemstoShow={4} style={{width:'90%'}} breakPoints={breakPoints}>
                 {
                   // eslint-disable-next-line array-callback-return
                      categories && categories.map(category => 
@@ -48,4 +48,3 @@ const breakPoints = [
     )
 }
 
-export default CategoryCarousel

@@ -6,7 +6,7 @@ import { Container, CategoryImg, ContainerItens, Image, Button, RodapeImg  } fro
 import Carousel from 'react-elastic-carousel'
 import formatCurrency from '../../Utils/formatCurrency'
 
-function OffersCarousel() {
+ export function OffersCarousel() {
 const [offers,setOffers] = useState([])
 
     useEffect(() => {
@@ -16,7 +16,7 @@ const [offers,setOffers] = useState([])
             const onlyOffers = data
             .filter(product => product.offer)
             .map(product => {
-                return {...product, formatedPrice:formatCurrency(product.formatedPrice)}
+                return {...product, formatedPrice:formatCurrency(product.price)}
             })
 
             setOffers(onlyOffers)
@@ -41,7 +41,7 @@ const breakPoints = [
              alt='logodaoferta'
              breakPoints={breakPoints} />
 
-            <Carousel itemstoShow={5} style={{width:'90%'}}>
+            <Carousel itemstoShow={5} style={{width:'90%'}} breakPoints={breakPoints}>
                 {offers &&
                  
                  // eslint-disable-next-line array-callback-return
@@ -60,4 +60,3 @@ const breakPoints = [
     )
 }
 
-export default OffersCarousel

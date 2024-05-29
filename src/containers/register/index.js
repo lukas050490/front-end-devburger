@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import api from '../../services/api'
 import { toast } from 'react-toastify';
 import {Link} from 'react-router-dom'
-import Button from '../../components/Button'
+import {Button} from '../../components'
 import RegisterImg from '../../assets/hamburger-register.jpg'
 import Logo from '../../assets/burger-logo.svg'
 import {
@@ -17,7 +17,8 @@ import {
     SignLink,
     ErrorMessage
 } from './styles'
-function Register() {
+
+ export function Register() {
 
     const schema = yup.object().shape({
         name: yup.string()
@@ -105,4 +106,3 @@ function Register() {
         </Container>
     )
 }
-export default Register
