@@ -38,7 +38,12 @@ const breakPoints = [
                      categories && categories.map(category => 
                         <ContainerItens key={category.id}>
                             <Image  src={category.url} alt='foto-da-category'/>
-                            <Button>{category.name}</Button>
+                            <Button
+                            to={{
+                                pathname: '/produtos',
+                                state:{categoryId: category.id}
+                            }}
+                            >{category.name}</Button>
                         </ContainerItens>
                         
                     )
