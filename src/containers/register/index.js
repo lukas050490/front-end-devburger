@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import api from '../../services/api'
 import { toast } from 'react-toastify';
 import {Link} from 'react-router-dom'
-import {Button} from '../../components'
+import {Button,ErrorMessage} from '../../components'
 import RegisterImg from '../../assets/hamburger-register.jpg'
 import Logo from '../../assets/burger-logo.svg'
 import {
@@ -14,8 +14,7 @@ import {
     ContainerItens,
     Label,
     Input,
-    SignLink,
-    ErrorMessage
+    SignLink
 } from './styles'
 
  export function Register() {

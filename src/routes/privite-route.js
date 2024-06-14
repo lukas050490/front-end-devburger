@@ -2,6 +2,7 @@ import React from 'react'
 import {Route, Redirect} from 'react-router-dom'
 import { Header } from '../components/Header'
 
+
 function PrivateRoute({component,isAdmin, ...rest}){
     const user = localStorage.getItem('codeburger:userData')
 
@@ -9,9 +10,9 @@ function PrivateRoute({component,isAdmin, ...rest}){
         return <Redirect to='/login' />
     }
 
-    if(isAdmin && !JSON.parce(user).admin){
+   /* if(isAdmin && !JSON.parse(user).admin){
         return <Redirect to='/' />
-    }
+    }*/
     return (
     <>
     {!isAdmin && <Header/>}

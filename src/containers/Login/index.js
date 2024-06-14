@@ -6,7 +6,7 @@ import api from '../../services/api'
 import { toast } from 'react-toastify';
 import { useUser } from '../../hooks/UserContext'
 import {Link,useHistory} from 'react-router-dom'
-import {Button} from '../../components'
+import {Button, ErrorMessage} from '../../components'
 import LoginImg from '../../assets/burgerflesh.jpg'
 import Logo from '../../assets/burger-logo.svg'
 import {
@@ -16,7 +16,6 @@ import {
     Label,
     Input,
     SignLink,
-    ErrorMessage
 } from './styles'
 
  export function Login() {
