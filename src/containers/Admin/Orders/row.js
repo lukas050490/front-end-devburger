@@ -12,29 +12,28 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import api from '../../../services/api'
 
-import { ProductsImg,ReactSelectStyle } from './styles'
+import { ProductsImg, ReactSelectStyle } from './styles'
 import status from './order-status'
 
-function Row({ row,setOrders,orders }) {
+function Row({ row, setOrders, orders }) {
 
-  const [open, setOpen] = React.useState(false);
-  const [isLoading, setIsloading] = React.useState(false)
+  const [open, setOpen] = React.useState(false)
+  const [isLoading, setIsLoading] = React.useState(false)
 
   async function setNewStatus(id, status) {
-    setIsloading(true)
-    try{
-    await api.put(`orders/${id}`, { status })
+    setIsLoading(true)
+    try {
+      await api.put(`orders/${id}`, { status })
 
-    const newOrders = orders.map(order => {
-      return order._id === id ? {...order, status} : order
-    })
-    setOrders(newOrders)
-
-  }catch(err){
-console.error(err)
-  }finally{
-    setIsloading(false)
-}
+      const newOrders = orders.map(order => {
+        return order._id === id ? { ...order, status } : order
+      })
+      setOrders(newOrders)
+    } catch (err) {
+      console.error(err)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (

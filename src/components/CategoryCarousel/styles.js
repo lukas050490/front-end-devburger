@@ -36,6 +36,7 @@ flex-direction: column;
 
 export const Image = styled.img`
 width: 200px;
+height: 150px;
 border-radius: 10px;
 
 `

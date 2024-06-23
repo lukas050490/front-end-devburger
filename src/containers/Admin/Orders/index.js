@@ -34,7 +34,7 @@ function Orders() {
     function createData(order) {
         return {
             name: order.user.name,
-            order: order._id,
+            orderId: order._id,
             date: formatDate(order.createdAt),
             status: order.status,
             products: order.products
@@ -47,19 +47,19 @@ function Orders() {
     }, [filteredOrders])
 
     useEffect(() => {
-        if(activeStatus === 1) {
+        if (activeStatus === 1) {
             setFilteredOrders(orders)
         } else {
-        const statusIndex = status.findIndex(sts => sts.id === activeStatus)
-        const newFilteredOrders = orders.filter(order => order.status === status[statusIndex].value)
-        setFilteredOrders(newFilteredOrders)
-    } 
+            const statusIndex = status.findIndex(sts => sts.id === activeStatus)
+            const newFilteredOrders = orders.filter(order => order.status === status[statusIndex].value)
+            setFilteredOrders(newFilteredOrders)
+        }
     }, [orders])
 
-    function handleStatus(status){
-        if(status.id === 1){
+    function handleStatus(status) {
+        if (status.id === 1) {
             setFilteredOrders(orders)
-        }else{
+        } else {
             const newOrders = orders.filter(order => order.status === status.value)
             setFilteredOrders(newOrders)
         }
@@ -68,38 +68,38 @@ function Orders() {
 
     return (
         <Container>
-        <Menu>
-            {status &&
-             // eslint-disable-next-line array-callback-return
-             status.map(status => (
-                 <LinkMenu 
-                 key={status.id}
-                  onClick={() => handleStatus(status)}
-                 isActiveStatus={activeStatus === status.id}
-                 >
-                    {status.label}
-                 </LinkMenu>
-                ))}
-        </Menu>
+            <Menu>
+                {status &&
+                    // eslint-disable-next-line array-callback-return
+                    status.map(status => (
+                        <LinkMenu
+                            key={status.id}
+                            onClick={() => handleStatus(status)}
+                            isActiveStatus={activeStatus === status.id}
+                        >
+                            {status.label}
+                        </LinkMenu>
+                    ))}
+            </Menu>
             <TableContainer component={Paper}>
                 <Table aria-label="collapsible table">
                     <TableHead>
                         <TableRow>
-                            <TableCell/>
-                            <TableCell>Pedido</TableCell>           
+                            <TableCell />
+                            <TableCell>Pedido</TableCell>
                             <TableCell>Cliente</TableCell>
                             <TableCell>Data do pedido</TableCell>
                             <TableCell>Status</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {rows.map((row) => (
+                        {rows.map(row => (
                             <Row
-                             key={row.orderId}
-                             row={row}
-                             setOrders={setOrders}
-                             orders={orders} 
-                             />
+                                key={row.orderId}
+                                row={row}
+                                setOrders={setOrders}
+                                orders={orders}
+                            />
                         ))}
                     </TableBody>
                 </Table>

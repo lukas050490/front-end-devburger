@@ -35,7 +35,6 @@ export function OffersCarousel() {
         { width: 400, itemsToShow: 2 },
         { width: 600, itemsToShow: 3 },
         { width: 900, itemsToShow: 4 },
-        { width: 1300, itemsToShow: 5 },
     ]
 
     return (
@@ -45,7 +44,7 @@ export function OffersCarousel() {
                 alt='logodaoferta'
                 breakPoints={breakPoints} />
 
-            <Carousel itemstoShow={5} style={{ width: '90%' }} breakPoints={breakPoints}>
+            <Carousel itemstoShow={4} style={{ width: '90%' }} breakPoints={breakPoints}>
                 {offers &&
 
                     

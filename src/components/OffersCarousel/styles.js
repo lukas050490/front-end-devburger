@@ -9,6 +9,7 @@ align-items: center;
 gap: 35px;
 padding: 35px 0;
 
+
 .rec.rec-arrow {
     background-color:  #9758a6;
     color: #efefef;
@@ -44,6 +45,7 @@ background: #e5e5e5;
 border-radius: 32.64px;
 width:313.39px;
 height:428.63px;
+justify-content: space-between;
 
 p{
     font-style: normal;
@@ -61,6 +63,7 @@ border-radius: 10px;
 
 export const Button = styled.button`
 margin-top: 16px;
+margin-bottom: 12px;
 background: #9758a6;
 border-radius: 8px;
 width: 90%;

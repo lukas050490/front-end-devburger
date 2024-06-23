@@ -10,9 +10,9 @@ function PrivateRoute({component,isAdmin, ...rest}){
         return <Redirect to='/login' />
     }
 
-   /* if(isAdmin && !JSON.parse(user).admin){
+    if(isAdmin && !JSON.parse(user).admin){
         return <Redirect to='/' />
-    }*/
+    }
     return (
     <>
     {!isAdmin && <Header/>}
