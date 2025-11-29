@@ -47,7 +47,7 @@ Atualização do status:
 ![Home](https://github.com/lukas050490/front-end-devburger/blob/main/public/dev-burguer-admin-readme.png?raw=true)
 
 ### 🛠️ Painel Administrativo
-![Admin](./images/devburguer-admin.png)
+![Admin](https://github.com/lukas050490/front-end-devburger/blob/main/public/dev-burguer-readme.png?raw=true)
 
 ---
 
